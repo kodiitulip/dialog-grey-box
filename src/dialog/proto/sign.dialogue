@@ -1,0 +1,30 @@
+~ start
+$> locals.que = 0
+~ que
+if main.gone >= 2
+	=> tired
+if locals.que >= 2
+	Você sabe ler?
+	$> locals.que = 0
+	=> fi
+Na placa tem uma mensagem.
+"Se você continuar nesse caminho, a camera nao vai te seguir."
+"E provavelmente você vai cair no vazio."
+- Ok
+	J: Acho q nao vou passar da placa então.
+	$> main.reset_player()
+	=> END
+- Nah
+	J: É só um placa.
+	=> fi
+- Que?
+	$> locals.que += 1
+	=> que
+
+~ fi
+$> main.gone += 1
+=> END
+
+~ tired
+A placa parece ter sido rabiscada e algo foi escrito por cima:
+"Piscina de bolinhas a frente!"
