@@ -1,30 +1,29 @@
 ~ start
 $> locals.que = 0
+if main.once
+	% Na placa tem uma mensagem.[next=auto]
+	% Você tenta ler oque está escrito na placa[next=auto]
+	$> main.once = false
 ~ que
-if main.gone >= 2
-	=> tired
 if locals.que >= 2
-	Você sabe ler?
+	Placa: Você sabe ler?[next=auto]
 	$> locals.que = 0
-	=> fi
-Na placa tem uma mensagem.
-"Se você continuar nesse caminho, a camera nao vai te seguir."
-"E provavelmente você vai cair no vazio."
+	- Sim?
+	- Sair
+		=> END
+Placa: "Se você continuar nesse caminho, a camera nao vai te seguir."[next=auto]
+Placa: "E provavelmente você vai cair no vazio."[next=auto]
 - Ok
-	J: Acho q nao vou passar da placa então.
-	$> main.reset_player()
-	=> END
+	Jogador: Acho q nao vou passar da placa então.[next=auto]
+	- Ok
+		$> main.reset_player()
+		=> END
 - Nah
-	J: É só um placa.
-	=> fi
+	Jogador: É só um placa.[next=auto]
+	- Sair
+		=> END
 - Que?
 	$> locals.que += 1
+	% Jogador: Não entendi.[next=auto]
+	% Jogador: Como Assim?[next=auto]
 	=> que
-
-~ fi
-$> main.gone += 1
-=> END
-
-~ tired
-A placa parece ter sido rabiscada e algo foi escrito por cima:
-"Piscina de bolinhas a frente!"

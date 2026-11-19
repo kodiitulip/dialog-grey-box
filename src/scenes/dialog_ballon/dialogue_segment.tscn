@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://b2mmla5p7x4n7"]
+
+[ext_resource type="Theme" uid="uid://ct335hy1ire8c" path="res://src/scenes/dialog_ballon/balloon.tres" id="1_mm0tk"]
+[ext_resource type="Script" uid="uid://yd5u3h6pxnkr" path="res://src/scenes/dialog_ballon/dialogue_segment.gd" id="2_1jbgo"]
+[ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.gd" id="3_i3tdc"]
+
+[node name="DialogueSegment" type="BoxContainer" unique_id=124902187]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+accessibility_name = "Dialogue Segment"
+accessibility_controls_nodes = Array[NodePath]([NodePath("CharacterLabel"), NodePath("MarginContainer/DialogueLabel")])
+theme = ExtResource("1_mm0tk")
+accessibility_region = true
+vertical = true
+script = ExtResource("2_1jbgo")
+metadata/_custom_type_script = "uid://yd5u3h6pxnkr"
+
+[node name="CharacterLabel" type="RichTextLabel" parent="." unique_id=849901242]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 1
+bbcode_enabled = true
+text = "Character"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1850723311]
+layout_mode = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+
+[node name="DialogueLabel" type="RichTextLabel" parent="MarginContainer" unique_id=1387406146]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Example
+"
+fit_content = true
+script = ExtResource("3_i3tdc")
+skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
+metadata/_custom_type_script = "uid://g32um0mltv5d"

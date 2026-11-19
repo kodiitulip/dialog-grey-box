@@ -15,7 +15,7 @@ signal response_selected(response: Variant)
 @export var response_template: Control
 
 ## The action for accepting a response (is possibly overridden by parent dialogue balloon).
-@export var next_action: StringName = &""
+@export_custom(PROPERTY_HINT_INPUT_NAME, "show_builtin,loose_mode") var next_action: StringName = &""
 
 ## Automatically set up focus neighbours when the responses list changes.
 @export var auto_configure_focus: bool = true

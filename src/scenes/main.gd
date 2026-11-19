@@ -10,6 +10,7 @@ const SIGN = preload("uid://814bsjj47meu")
 
 var sign_started: bool = false
 var gone: int = 0
+var once: bool = true
 
 @onready var player: Player = $CharacterBody2D as Player
 
@@ -43,7 +44,7 @@ func _on_sign_body_entered(body: Node2D) -> void:
 	if sign_started or body != player: return
 	var c: CharacterBody2D = body as CharacterBody2D
 	c.velocity = Vector2.ZERO
-	DialogueManager.show_dialogue_balloon(SIGN, "start", [{"main": self}])
+	DialogueManager.show_dialogue_balloon_scene("uid://15slcyqnh4k2", SIGN, "start", [{"main": self}])
 
 
 func reset_player() -> void:
