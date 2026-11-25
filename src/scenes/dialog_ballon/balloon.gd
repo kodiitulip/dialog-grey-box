@@ -132,7 +132,7 @@ func apply_dialogue_line() -> void:
 	balloon.focus_mode = Control.FOCUS_ALL
 	balloon.grab_focus()
 	
-	var segment: DialogueSegment = dialogue_line_container.apply_dialogue()
+	var segment: DialogueSegment = dialogue_line_container.get_last_or_new_segment(dialogue_line.character)
 	character_label = segment.character_label
 	dialogue_label = segment.dialogue_label
 

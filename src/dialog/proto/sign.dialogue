@@ -6,8 +6,8 @@ if main.once
 	$> main.once = false
 ~ que
 if locals.que >= 2
-	Placa: Você sabe ler?[next=auto]
 	$> locals.que = 0
+	Placa: Você sabe ler?[next=auto]
 	- Sim?
 	- Sair
 		=> END
